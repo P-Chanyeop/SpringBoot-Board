@@ -1,0 +1,21 @@
+{{>layouts/header}}
+
+{{#article}}
+<div class="form control">
+    <form class="mb-3" action="/articles/update" method="post">
+        <input name="id" type="hidden" value="{{id}}">
+        <div>
+            <div><label class="form-label">Title</label></div>
+            <input class="form-control" type="text" maxlength="50" name="title" value="{{title}}">
+        </div>
+        <div>
+            <div><label class="form-label">Content</label></div>
+            <textarea class="form-control" rows="3" maxlength="2048" name="content">{{content}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<a href="/articles/{{id}}" class="btn btn-warning m-2">Back</a>
+{{/article}}
+{{>layouts/footer}}
+

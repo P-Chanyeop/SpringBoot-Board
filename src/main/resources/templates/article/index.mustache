@@ -1,0 +1,23 @@
+{{>layouts/header}}
+<!-- 게시글 표시 란 -->
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+{{#articles}}
+        <th scope="row">{{id}}</th>
+            <td><a href="/articles/{{id}}" style="text-decoration : none; color : black">{{title}}</a></td>
+            <td>{{content}}</td>
+        </tr>
+{{/articles}}
+        </tbody>
+    </table>
+<a class="btn btn-primary m-2" href="/articles/new">New</a>
+
+{{>layouts/footer}}

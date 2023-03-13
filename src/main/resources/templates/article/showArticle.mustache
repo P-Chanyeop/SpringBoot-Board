@@ -1,0 +1,24 @@
+{{>layouts/header}}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Content</th>
+            </tr>
+        </thead>
+        <tbody>
+{{#article}}
+            <tr>
+                <th scope="row">{{id}}</th>
+                <td>{{title}}</td>
+                <td>{{content}}</td>
+            </tr>
+        </tbody>
+    </table>
+<a href="/articles" class="btn btn-warning m-2">Back</a>
+<a href="/articles/{{id}}/edit" class="btn btn-dark">Edit</a>
+<a href="/articles/{{id}}/delete" class="btn btn-danger">Delete</a>
+{{/article}}
+{{>layouts/footer}}

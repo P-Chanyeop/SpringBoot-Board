@@ -1,0 +1,47 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.8'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.example'
+version = '0.0.7'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.webjars:jquery:3.5.1'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-mustache'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	annotationProcessor 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok:'
+	implementation 'org.projectlombok:lombok'
+	runtimeOnly 'com.h2database:h2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+	implementation 'org.springframework.boot:spring-boot-starter-tomcat'
+
+	// 스프링 시큐리티 프레임워크
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	//implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
+
+	// 뷰에서 전달받은 값을 검증하는 Spring Boot validation 라이브러리
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// 마크다운 라이브러리
+	implementation 'org.commonmark:commonmark:0.21.0'
+
+	// PostgreSQL 라이브러리
+	runtimeOnly 'org.postgresql:postgresql'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
